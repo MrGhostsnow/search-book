@@ -15,8 +15,6 @@ interface BookCardProps {
 }
 
 const BookCard: React.FC<BookCardProps> = ({ book }) => {
-  console.log("Book received:", book);
-
   const title = book.volumeInfo?.title || book.title;
   const description = book.volumeInfo?.description || book.description;
   const publishedDate = book.volumeInfo?.publishedDate || book.publishedDate;
@@ -28,7 +26,7 @@ const BookCard: React.FC<BookCardProps> = ({ book }) => {
       <ContainerBookCard>
         <SectionBookCard>
           <img src={thumbnail} alt={title} />
-          <Title>{title}</Title>
+          <Title>{limitDescription(title, 30)}</Title>
           <Description>{limitDescription(description, 100)}</Description>
           <PublishedDate>{publishedDate}</PublishedDate>
         </SectionBookCard>

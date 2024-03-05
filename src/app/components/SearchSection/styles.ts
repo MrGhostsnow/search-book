@@ -23,7 +23,7 @@ export const Input = styled.input`
     width: 300px;
     height: 30px;
     border-radius: 8px;
-    border: none;
+   
 `;
 
 export const ButtonSearch = styled.button`

@@ -26,7 +26,7 @@ const SearchSection: React.FC<SearchBarProps> = ({ onSearch }) => {
       <InputSection>
         <Input
           type="text"
-          placeholder="Pesquise por filmes"
+          placeholder="Pesquise por livros"
           value={searchTerm}
           onChange={handleInputChange}
         />
