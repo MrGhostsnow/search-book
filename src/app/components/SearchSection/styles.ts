@@ -12,6 +12,10 @@ export const ContainerSearchSection = styled.section`
 export const InputSection = styled.section`
     display: flex;
     gap: 2rem;
+
+    @media (max-width: 425px) {
+        gap: 1rem;
+    }
 `;
 
 export const Input = styled.input`
@@ -23,6 +27,10 @@ export const Input = styled.input`
     width: 300px;
     height: 30px;
     border-radius: 8px;
+
+    @media (max-width: 425px) {
+        width: 200px;
+    }
    
 `;
 

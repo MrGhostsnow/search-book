@@ -11,6 +11,18 @@ export const ContainerHomePage = styled.div`
     border: 1px solid ;
     border-radius: 8px;
     background-color: #434371;
+
+    @media (max-width: 1024px) {
+        width: 800px;
+    }
+
+    @media (max-width: 768px) {
+        width: 600px;
+    }
+
+    @media (max-width: 425px) {
+        width: 350px;
+    }
 `
 
 export const ContainerFindBooks = styled.div`
@@ -34,6 +46,18 @@ export const SectionFindBooks = styled.section`
     gap: 3rem;
     padding: 3rem;
     width: 100%;
+
+    @media (max-width: 1440px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 425px) {
+        grid-template-columns: repeat(1, 1fr);
+    }
 `;
 
 export const LabelSection = styled.section`
