@@ -1,15 +1,14 @@
 import React from "react";
-import { ContainerHomePage, Label, LabelSection } from "./styles";
+import {
+  ContainerHomePage,
+  Label,
+  LabelSection,
+  ContainerFindBooks,
+} from "./styles";
 import SearchSection from "../SearchSection";
+import BookCard from "../BookCard";
 import { useBooks } from "../../services/booksContext";
-
-interface IBook {
-  id: string;
-  title: string;
-  authors: string;
-  publishedDate: string;
-  description: string;
-}
+import { IBook } from "../../interfaces/IBook";
 
 const HomePage: React.FC = () => {
   const { searchBooks, setSearchBooks, setCurrentPage } = useBooks();
@@ -33,22 +32,17 @@ const HomePage: React.FC = () => {
 
   const handleSearch = (searchTerm: string) => {
     fetchBooks(searchTerm);
-    setCurrentPage(1);
+    setCurrentPage(2);
   };
 
   return (
     <>
       {searchBooks.length > 0 ? (
-        <div>
+        <ContainerFindBooks>
           {searchBooks.map((book: IBook) => (
-            <div key={book.id}>
-              <h1>{book.title}</h1>
-              <p>{book.authors}</p>
-              <p>{book.publishedDate}</p>
-              <p>{book.description}</p>
-            </div>
+            <BookCard key={book.id} book={book} />
           ))}
-        </div>
+        </ContainerFindBooks>
       ) : (
         <ContainerHomePage>
           <LabelSection>
