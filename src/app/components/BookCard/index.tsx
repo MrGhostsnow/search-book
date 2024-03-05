@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import {
   ContainerBookCard,
@@ -15,14 +16,14 @@ interface BookCardProps {
 }
 
 const BookCard: React.FC<BookCardProps> = ({ book }) => {
-  const title = book.volumeInfo?.title || book.title;
-  const description = book.volumeInfo?.description || book.description;
-  const publishedDate = book.volumeInfo?.publishedDate || book.publishedDate;
+  const title = book.volumeInfo?.title;
+  const description = book.volumeInfo?.description;
+  const publishedDate = book.volumeInfo?.publishedDate;
   const thumbnail = book.volumeInfo?.imageLinks?.thumbnail || "";
   const infoLink = book.volumeInfo?.infoLink || "";
 
   return (
-    <Link href={infoLink}>
+    <Link href={infoLink} target="_blank">
       <ContainerBookCard>
         <SectionBookCard>
           <img src={thumbnail} alt={title} />
